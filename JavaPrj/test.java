@@ -1,3 +1,4 @@
+import java.util.Scanner;
 class Book {
     private String title;
     private int price;
@@ -75,11 +76,23 @@ class Book {
         System.out.println("The price is " + this.price);
     }
     public static void main(String[] args) {
-        Book book1 = Book.createBook("The Lord of the Rings", 1000, 2001, "J.R.R. Tolkien", "John", 1900, 30, 32);
-        Book book2 = Book.createBook("The Hobbit", 500, 2001, "J.R.R. Tolkien", "John", 1999, 1, 31);
-        book1.ShowBook();
-        book2.ShowBook();
-        book1.IsItSameYear(book2);
-        book1.SaleOff(10);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the title of the book: ");
+        String title = sc.nextLine();
+        System.out.println("Enter the price of the book: ");
+        int price = sc.nextInt();
+        System.out.println("Enter the year of the book: ");
+        int year = sc.nextInt();
+        System.out.println("Enter the name of the author: ");
+        String name = sc.nextLine();
+        System.out.println("Enter the birth year of the author: ");
+        int birthYear = sc.nextInt();
+        System.out.println("Enter the birth month of the author: ");
+        int birthMonth = sc.nextInt();
+        System.out.println("Enter the birth day of the author: ");
+        int birthDay = sc.nextInt();
+        Book book = Book.createBook(title, price, year, author, name, birthYear, birthMonth, birthDay);
+        book.ShowBook();
+        book.SaleOff(10);
     }
 }
